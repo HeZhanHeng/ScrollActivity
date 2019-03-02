@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hezhanheng.scrollactivity.WelcomeActivity">
+<com.example.hezhanheng.scrollactivity.views.CountDownProgressView
+    android:id="@+id/countdownProgressView"
+    android:layout_alignParentRight="true"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:textSize="15sp"
+    app:circSolidColor = "#00000000"/>
+    
+    
+    <TextView
+    android:textSize="20sp"
+    android:gravity="center"
+    android:textColor="@color/colorAccent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="欢迎来到德莱联盟!"/>
+</RelativeLayout>
