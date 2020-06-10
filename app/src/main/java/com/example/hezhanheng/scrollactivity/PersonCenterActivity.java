@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.hezhanheng.scrollactivity.views.MyScrollView;
 
 public class PersonCenterActivity extends AppCompatActivity implements MyScrollView.OnScrollListener, View.OnClickListener {
-    private LinearLayout top_bg;
-    private ImageView back;
+    private RelativeLayout top_bg;
+    private ImageView back,back2;
     private TextView title;
     private ImageView shopping_cart;
     private MyScrollView scroller;
@@ -23,8 +24,9 @@ public class PersonCenterActivity extends AppCompatActivity implements MyScrollV
         initView();
     }
     private void initView() {
-        top_bg = (LinearLayout) findViewById(R.id.top_bg);
+        top_bg = (RelativeLayout) findViewById(R.id.top_bg);
         back = (ImageView) findViewById(R.id.back);
+        back2=(ImageView)  findViewById(R.id.back2);
         back.setOnClickListener(this);
         title=(TextView)findViewById(R.id.title);
         shopping_cart = (ImageView) findViewById(R.id.shopping_cart);
@@ -34,19 +36,25 @@ public class PersonCenterActivity extends AppCompatActivity implements MyScrollV
     } 	@Override
     public void onScroll(int scrollY) {
         if(scrollY < 100){
+            back.setVisibility(View.VISIBLE);
+            back2.setVisibility(View.GONE);
             top_bg.getBackground().setAlpha(255);
-            top_bg.setBackgroundColor(getResources().getColor(R.color.lemonchiffon));
+            top_bg.setBackgroundColor(getResources().getColor(R.color.blue_deep));
 //            back.getBackground().setAlpha(255);
 //            shopping_cart.getBackground().setAlpha(255);
             title.setVisibility(View.INVISIBLE);
         }else if(scrollY >= 100 && scrollY < 500){
-            top_bg.setBackgroundColor(getResources().getColor(R.color.lemonchiffon));
+            back.setVisibility(View.VISIBLE);
+            back2.setVisibility(View.GONE);
+            top_bg.setBackgroundColor(getResources().getColor(R.color.blue_deep));
             top_bg.getBackground().setAlpha(255-(scrollY-100)/3);
             title.setVisibility(View.INVISIBLE);
 //            back.getBackground().setAlpha(255 - (scrollY-100)/3);
 //            shopping_cart.getBackground().setAlpha(255 - (scrollY-100)/3);
 
         }else{
+            back.setVisibility(View.GONE);
+            back2.setVisibility(View.VISIBLE);
             top_bg.getBackground().setAlpha(0);
             top_bg.setBackgroundColor(Color.rgb(255, 255, 255));
             title.setVisibility(View.VISIBLE);

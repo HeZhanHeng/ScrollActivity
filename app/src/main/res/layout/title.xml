@@ -1,31 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content" android:id="@+id/top_bg"
-    android:background="@color/lemonchiffon">
+    android:layout_height="55dp" android:id="@+id/top_bg"
+    android:background="@color/blue_deep">
     <ImageView
         android:id="@+id/back"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_margin="5dp"
-        android:background="@drawable/background_circle"
         android:padding="10dp"
-        android:src="@drawable/back" />
+        android:src="@mipmap/firstpage_title_message" />
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/back2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:src="@mipmap/firstpage_title_message_black" />
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:id="@+id/title"
+        android:layout_centerInParent="true"
         android:visibility="invisible"
         android:gravity="center"
         android:textSize="18sp"
+        android:textColor="@color/black"
         android:text="我是被隐藏的标题"
         android:layout_height="match_parent"
         android:layout_weight="1" />
     <ImageView
         android:id="@+id/shopping_cart"
+        android:layout_alignParentRight="true"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_margin="5dp"
         android:background="@drawable/background_circle"
         android:padding="10dp"
         android:src="@drawable/shop_car" />
-</LinearLayout>
+</RelativeLayout>
